@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Shared packing list for the Algonquin camping trip, September 5–8, 2026."
+  >
+
+  <title>Algonquin Camping Trip</title>
+
+
+  <!-- ======================================================
+       FONTS
+       ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- ======================================================
+       STYLES
+       ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- ======================================================
+       NAVIGATION
+       ====================================================== -->
+
+  <nav class="site-nav">
+
+    <a
+      href="#top"
+      class="wordmark"
+    >
+      ALGONQUIN
+    </a>
+
+
+    <div class="nav-meta">
+
+      <a href="#packing-list">
+        Packing List
+      </a>
+
+      <div
+        id="connectionStatus"
+        class="status syncing"
+      >
+
+        <span class="status-dot"></span>
+
+        <span id="statusText">
+          Connecting
+        </span>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <main id="top">
+
+
+    <!-- ====================================================
+         HERO
+         ==================================================== -->
+
+    <section class="hero">
+
+
+      <div class="hero-copy">
+
+        <p class="eyebrow">
+          SEPTEMBER 5–8, 2026
+        </p>
+
+
+        <h1>
+          Algonquin<br>
+          Camping Trip
+        </h1>
+
+
+        <p class="lede">
+          Shared packing list
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="#packing-list"
+            class="primary-button"
+          >
+            View packing list
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ==================================================
+           SIMPLE LANDSCAPE
+           ================================================== -->
+
+      <div
+        class="landscape"
+        aria-hidden="true"
+      >
+
+        <div class="sun"></div>
+
+        <div class="ridge ridge-one"></div>
+
+        <div class="ridge ridge-two"></div>
+
+        <div class="pine pine-one"></div>
+
+        <div class="pine pine-two"></div>
+
+        <div class="lake"></div>
+
+        <div class="contour contour-one"></div>
+
+        <div class="contour contour-two"></div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ====================================================
+         ORGANIC DIVIDER
+         ==================================================== -->
+
+    <div class="organic-divider"></div>
+
+
+
+    <!-- ====================================================
+         CONTROLS
+         ==================================================== -->
+
+    <section class="controls">
+
+
+      <div class="name-control">
+
+        <label for="myName">
+          YOUR NAME
+        </label>
+
+        <input
+          id="myName"
+          type="text"
+          maxlength="40"
+          placeholder="Enter your name"
+          autocomplete="name"
+        >
+
+      </div>
+
+
+
+      <div class="progress-control">
+
+        <div class="progress-label">
+
+          <span>
+            PROGRESS
+          </span>
+
+          <strong id="progressText">
+            0 / 0
+          </strong>
+
+        </div>
+
+
+        <div class="progress-track">
+
+          <div
+            id="progressBar"
+            class="progress-bar"
+          ></div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="control-actions">
+
+        <button
+          id="copyLink"
+          type="button"
+          class="secondary-button"
+        >
+          Share
+        </button>
+
+
+        <button
+          id="addItem"
+          type="button"
+          class="primary-button small"
+        >
+          Add item
+        </button>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ====================================================
+         PACKING LIST INTRO
+         ==================================================== -->
+
+    <section class="intro">
+
+      <h2>
+        Packing List
+      </h2>
+
+      <p>
+        Check an item when it’s packed and add your name
+        to anything you’re bringing.
+      </p>
+
+    </section>
+
+
+
+    <!-- ====================================================
+         PACKING LIST
+         ==================================================== -->
+
+    <section
+      id="packing-list"
+      class="list"
+      aria-label="Algonquin camping packing list"
+    >
+
+      <div class="loading">
+
+        <div class="loading-line"></div>
+
+        Loading packing list
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+
+  <footer>
+
+    <div class="footer-mark">
+      ◌
+    </div>
+
+
+    <div class="footer-copy">
+
+      <strong>
+        ALGONQUIN
+      </strong>
+
+      <span>
+        September 5–8, 2026
+      </span>
+
+    </div>
+
+
+    <p>
+      Shared packing list
+    </p>
+
+  </footer>
+
+
+
+  <!-- ======================================================
+       ADD ITEM DIALOG
+       ====================================================== -->
+
+  <dialog id="addDialog">
+
+    <form id="addForm">
+
+      <button
+        type="button"
+        id="closeDialog"
+        class="close"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <h2>
+        Add item
+      </h2>
+
+
+      <label for="newCategory">
+        CATEGORY
+      </label>
+
+      <input
+        id="newCategory"
+        type="text"
+        maxlength="150"
+        placeholder="e.g. Cooking"
+        required
+      >
+
+
+      <label for="newItem">
+        ITEM
+      </label>
+
+      <input
+        id="newItem"
+        type="text"
+        maxlength="200"
+        placeholder="What should we bring?"
+        required
+      >
+
+
+      <label for="newWho">
+        WHO IS BRINGING IT
+      </label>
+
+      <input
+        id="newWho"
+        type="text"
+        maxlength="40"
+        placeholder="Optional"
+      >
+
+
+      <button
+        type="submit"
+        class="primary-button"
+      >
+        Add item
+      </button>
+
+    </form>
+
+  </dialog>
+
+
+
+  <!-- ======================================================
+       TOAST
+       ====================================================== -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+
+  <!-- ======================================================
+       APPLICATION
+       ====================================================== -->
+
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
+
+</body>
+
+</html>

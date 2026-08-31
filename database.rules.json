@@ -1,0 +1,32 @@
+{
+    "rules": {
+      "packingList": {
+        ".read": true,
+        ".write": true,
+  
+        "$item": {
+          ".validate": "newData.hasChildren(['category', 'item', 'who', 'done', 'createdAt'])",
+  
+          "category": {
+            ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 150"
+          },
+  
+          "item": {
+            ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 200"
+          },
+  
+          "who": {
+            ".validate": "newData.isString() && newData.val().length <= 40"
+          },
+  
+          "done": {
+            ".validate": "newData.isBoolean()"
+          },
+  
+          "createdAt": {
+            ".validate": "newData.isNumber()"
+          }
+        }
+      }
+    }
+  }
