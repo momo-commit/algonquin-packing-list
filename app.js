@@ -63,8 +63,6 @@ const statusText =
 const addItemButton =
   document.getElementById("addItem");
 
-const clearDoneButton =
-  document.getElementById("clearDone");
 
 const copyLinkButton =
   document.getElementById("copyLink");
@@ -1625,115 +1623,6 @@ addForm.addEventListener(
 );
 
 
-// ============================================================
-// CLEAR CHECKED ITEMS
-// ============================================================
-
-clearDoneButton.addEventListener(
-  "click",
-  async () => {
-
-    if (!databaseReady) {
-
-      showToast(
-        "The shared list is still connecting."
-      );
-
-      return;
-
-    }
-
-
-    const completed =
-      Object.entries(items)
-        .filter(
-          ([, item]) =>
-            item.done === true
-        );
-
-
-    if (completed.length === 0) {
-
-      showToast(
-        "There are no checked items."
-      );
-
-      return;
-
-    }
-
-
-    const confirmed =
-      window.confirm(
-        `Remove ${completed.length} checked item${completed.length === 1 ? "" : "s"} from the list?`
-      );
-
-
-    if (!confirmed) {
-      return;
-    }
-
-
-    try {
-
-      setStatus(
-        "syncing",
-        "Saving"
-      );
-
-
-      const updates = {};
-
-
-      completed.forEach(
-        ([id]) => {
-
-          updates[
-            `packingList/${id}`
-          ] = null;
-
-        }
-      );
-
-
-      await update(
-        ref(db),
-        updates
-      );
-
-
-      showToast(
-        `${completed.length} checked item${completed.length === 1 ? "" : "s"} removed.`
-      );
-
-
-      setStatus(
-        "online",
-        "Live"
-      );
-
-    }
-
-    catch (error) {
-
-      console.error(
-        "Could not clear checked items:",
-        error
-      );
-
-      showToast(
-        "Could not clear the checked items."
-      );
-
-      setStatus(
-        "offline",
-        "Save failed"
-      );
-
-    }
-
-  }
-);
 
 
 // ============================================================
