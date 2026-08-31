@@ -1505,20 +1505,13 @@
     }
   
   
-    .category {
-      grid-template-columns:
-        33px
-        minmax(0, 1fr);
-  
-      margin-bottom: 48px;
-    }
-  
-  
-    .category-label {
-      padding-right: 9px;
-  
-      font-size: 8px;
-    }
+.category {
+  margin-bottom: 48px;
+}
+
+.category-label {
+  font-size: 11px;
+}
   
   
     /* Mobile list row */
