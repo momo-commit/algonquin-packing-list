@@ -839,47 +839,46 @@
   }
   
   
-  /* Category */
-  
-  .category {
-    display: grid;
-  
-    grid-template-columns:
-      110px
-      minmax(0, 1fr);
-  
-    margin-bottom: 60px;
-  }
-  
-  
-  /* Vertical category label */
-  
-  .category-label {
-    padding:
-      11px
-      18px
-      11px
-      0;
-  
-    border-right: 1px solid var(--earth-light);
-  
-    writing-mode: vertical-rl;
-  
-    transform: rotate(180deg);
-  
-    text-align: right;
-  
-    color: var(--sage-muted);
-  
-    font-size: 9px;
-    font-weight: 600;
-  
-    letter-spacing: 0.20em;
-  
-    text-transform: uppercase;
-  
-    white-space: pre-wrap;
-  }
+/* Category */
+
+.category {
+  display: block;
+
+  margin-bottom: 60px;
+}
+
+
+/* Horizontal category label */
+
+.category-label {
+
+  padding:
+    0
+    0
+    14px;
+
+  margin-bottom: 18px;
+
+  border-bottom: 1px solid var(--earth-light);
+
+  writing-mode: horizontal-tb;
+
+  transform: none;
+
+  text-align: left;
+
+  color: var(--forest-deep);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  white-space: normal;
+}
   
   
   /* Category list */
