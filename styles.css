@@ -959,83 +959,86 @@
   }
   
   
-  /* ============================================================
-     CUSTOM CHECKBOX
-     ============================================================ */
-  
-  .check {
-    appearance: none;
-  
-    width: 17px;
-    height: 17px;
-  
-    margin: 0;
-  
-    border: 1px solid var(--sage-muted);
-  
-    background: transparent;
-  
-    cursor: pointer;
-  
-    position: relative;
-  
-    transition:
-      background-color 0.4s ease,
-      border-color 0.4s ease,
-      transform 0.3s ease;
-  }
-  
-  
-  .check:hover {
-    border-color: var(--forest-deep);
-  
-    transform: scale(1.05);
-  }
-  
-  
-  .check:focus-visible {
-    outline: 2px solid var(--sage-muted);
-  
-    outline-offset: 3px;
-  }
-  
-  
-  .check::after {
-    content: "";
-  
-    position: absolute;
-  
-    width: 5px;
-    height: 9px;
-  
-    left: 5px;
-    top: 2px;
-  
-    border-right: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-  
-    transform:
-      rotate(40deg)
-      scale(0);
-  
-    transition:
-      transform 0.35s ease;
-  }
-  
-  
-  .check:checked {
-    background: var(--sage-muted);
-  
-    border-color: var(--sage-muted);
-  }
-  
-  
-  .check:checked::after {
-    transform:
-      rotate(40deg)
-      scale(1);
-  }
-  
+/* ============================================================
+   CUSTOM CHECKBOX
+   ============================================================ */
+
+.check {
+  appearance: none;
+
+  width: 17px;
+  height: 17px;
+
+  margin: 0;
+
+  border: 1px solid var(--sage-muted);
+
+  background: transparent;
+
+  cursor: pointer;
+
+  position: relative;
+
+  flex-shrink: 0;
+
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.3s ease;
+}
+
+
+.check:hover {
+  border-color: var(--forest-deep);
+
+  transform: scale(1.05);
+}
+
+
+.check:focus-visible {
+  outline: 2px solid var(--sage-muted);
+
+  outline-offset: 3px;
+}
+
+
+.check::after {
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+  height: 9px;
+
+  left: 5px;
+  top: 2px;
+
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+
+  transform:
+    rotate(40deg)
+    scale(0);
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.check:checked {
+
+  background: var(--sage-muted);
+
+  border-color: var(--sage-muted);
+}
+
+
+.check:checked::after {
+
+  transform:
+    rotate(40deg)
+    scale(1);
+}
   
   /* ============================================================
      WHO IS BRINGING IT
@@ -1521,22 +1524,28 @@
   
     /* Mobile list row */
   
-    .row {
-      grid-template-columns:
-        38px
-        minmax(0, 1fr)
-        30px;
-  
-      padding:
-        10px
-        8px;
-    }
+.row {
+
+  grid-template-columns:
+    28px
+    minmax(0, 1fr)
+    28px;
+
+  column-gap: 8px;
+
+  padding:
+    12px
+    8px;
+}
   
   
     .item {
       font-size: 13px;
     }
-  
+     .item {
+     min-width: 0;
+     overflow-wrap: break-word;
+   }
   
     .who {
       grid-column: 2;
